@@ -40,6 +40,63 @@ Bracken Pen Turner
 
 ### User Stories
 
+### Deployment.
+
+#### Github, Gitpod, Git, Heroku, and Amazon AWS.
+
+- #### Project setup.
+ - The project was set up on GitHub using the Code Institue Gitpod Template.
+  - I located the template on the Code Institute GitHub page and clicked the use template button.
+  - I then named my repository and created it.
+  - Once the repository was created I was able to open it with Gitpod.
+  - I could then use the terminal to create files and folders and start coding the project.
+  - Throughout the project, I used git to add my changes to version control in GitHub.
+  - To commit I added the file to the staging area with the 
+    ```
+        git add <filename>
+    ```
+    ```
+        git commit -m "<commit message>"
+    ```
+    ```
+        git push
+    ```
+
+
+- #### Installing Django
+    ```
+       pip3 install Django==3.2
+    ```
+- create project folder
+
+    ```
+       django-admin startproject bracken_pen .
+    ```
+
+- create file: 
+
+    ```
+      touch .gitignore      
+    ```
+
+- To run the programe
+  ```
+    python3 manage.py runserver
+  ```
+
+- This should show the install has worked but there will be migrations to take care off. 
+  ```
+    python3 manage.py migrate
+  ```
+
+-It would now be useful to create a super user
+  ```
+    python3 manage.py createsuperuser
+  ```
+
+
+
+
 
 ### Repository Link
 
