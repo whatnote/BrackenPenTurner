@@ -56,6 +56,11 @@ Bracken Pen Turner
 
 The chosen font was the one Roy used to design his logo, which was Calibra Light, when I looked to google fonts, I found Open Sans to be most like it, so I elected that as the backup with calibra as the primary font. 
 
+[Google fonts](https://fonts.google.com/specimen/Lato?query=lato&selection.family=Lato&sidebar.open=)
+
+Font awesome was used to provide the icons, that really bring the page to life. 
+
+[Font Awesome](https://fontawesome.com/kits/e5ebf0ee99/use                                                                                                                                                                                                                                                                                      )
 
 ### Deployment.
 
