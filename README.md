@@ -40,6 +40,19 @@ Bracken Pen Turner
 
 ### User Stories
 
+- Shopper
+    - View Items for sale
+    - Search items for sale
+    - See individual item details
+
+- Site Browser
+    - Rigester for an account
+    - able to log in and log out
+    - recvoery of forgotten password
+    - personalised profile
+- 
+
+
 ### Deployment.
 
 #### Github, Gitpod, Git, Heroku, and Amazon AWS.
@@ -94,8 +107,17 @@ Bracken Pen Turner
     python3 manage.py createsuperuser
   ```
 
+- To enable user function use django allauth
+  ```
+  pip3 install django-allauth==0.41.0
+  ```
 
+  [full allauth documtation](https://django-allauth.readthedocs.io/en/latest/installation.html)
 
+- to create a requirement file
+  ```
+    pip3 freeze > requirements.txt
+  ```
 
 
 ### Repository Link
