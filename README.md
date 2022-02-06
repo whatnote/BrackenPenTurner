@@ -192,11 +192,11 @@ the email connenction was lifted from the codeinstitute course.
 
 [**JavaScript**](https://www.javascript.com/)
 
-- The main focus of this project. script.js is linked to the index.html file.
+- script.js is linked to the base.html file and also written directly into the html file when specific to only that page.
 
-[**jQuery**](https://jquery.com)
+[**jQuery**](https://releases.jquery.com/jquery/)
 
-- I use jQueryt for DOM manipulation in my project.
+- I used jQuery for DOM manipulation in my project.
 
 [**Python3**](https://www.python.org/)
 - was used to program the join the frontend to the backend. 
