@@ -52,6 +52,10 @@ Bracken Pen Turner
     - personalised profile
 - 
 
+## Styling
+
+The chosen font was the one Roy used to design his logo, which was Calibra Light, when I looked to google fonts, I found Open Sans to be most like it, so I elected that as the backup with calibra as the primary font. 
+
 
 ### Deployment.
 
