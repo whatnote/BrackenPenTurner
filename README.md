@@ -34,7 +34,7 @@
 
 ## About
 
-Bracken Pen Turner 
+Bracken Pen Turner, 
 
 ## UX
 
@@ -44,13 +44,25 @@ Bracken Pen Turner
     - View Items for sale
     - Search items for sale
     - See individual item details
+    - see all items for sale
+    - able to view the total of your current purchases.
 
 - Site Browser
     - Rigester for an account
     - able to log in and log out
     - recvoery of forgotten password
     - personalised profile
-- 
+
+- sorting and searching
+    - Sort the list of available products
+    - sort a specific
+    - sort multiple categories of products simltaneously
+    - Search for a product be name or description
+    - Easily see what was search for and number of results. 
+
+- Purchasing and checkout
+    - 
+
 
 ## Styling
 
