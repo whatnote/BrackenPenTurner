@@ -134,6 +134,22 @@ Font awesome was used to provide the icons, that really bring the page to life.
   ```
 
 
+
+-to add the products section
+ 
+ ```
+ python3 manage.py startapp products
+ ```
+
+-add the app to setting.py
+
+```
+mkdir products/fixtures
+```
+
+
+
+
 ### Repository Link
 
 To run the site in a live environment [click here](http://claims-corner.herokuapp.com/login)

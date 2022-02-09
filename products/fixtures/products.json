@@ -1,0 +1,103 @@
+[{
+        "pk": 1,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp5001340155",
+            "name": "Acrylic Black and White Cigar Pen",
+            "description": "A wonderfully turned white acrylic with black swirl. ",
+            "price": 45.99,
+            "category": 1,
+            "image": "PenNo292.png"
+        }
+    },
+
+    {
+        "pk": 2,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp5001600425",
+            "name": "Gold and Black Fountain Pen Acrylic",
+            "description": "A delightfully turned fountain pen detailing amber huews",
+            "price": 65.99,
+            "category": 2,
+            "image": "PenNo312.png"
+        }
+    },
+
+    {
+        "pk": 3,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp5001730010",
+            "name": "Acrylic Red and Black Fountain Pen",
+            "description": "An Acrylic truned red and black fountain pen, beautifully joing together both colours in smokey coulds",
+            "price": 65.99,
+            "category": 2,
+            "image": "PenNo313.png"
+        }
+    },
+
+    {
+        "pk": 4,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp5001890157",
+            "name": "Acrylic Orange and black Race Car Stlyus",
+            "description": "A brilliantly turned acrylic racing car stlyus, complete with stering wheel clip detail.",
+            "price": 36.99,
+            "category": 4,            
+            "image": "PenNo321.png"
+        }
+    },
+
+    {
+        "pk": 5,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp5002111605",
+            "name": "Acrylic Purple and black Race Car Stlyus",
+            "description": "A brilliantly turned acrylic racing car stlyus, complete with stering wheel clip detail.",
+            "price": 36.99,
+            "category": 4,           
+            "image": "PenNo322.png"
+        }
+    },
+
+    {
+        "pk": 6,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp5002260206",
+            "name": "Acrylic blue, white, green and white Cigar Pen",
+            "description": "A stunning colection of colours turned out of acrylic Cigar",
+            "price": 45.99,
+            "category": 1,
+            "image": "PenNo325.png"
+        }
+    },
+
+    {
+        "pk": 7,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp5002440521",
+            "name": "Acrylic blue, white, green and black Slim Line Pen",
+            "description": "A perfectly turned Acrylic Pen containing blue, white, green and black.",
+            "price": 29.99,
+            "category": 5,     
+            "image": "PenNo328.png"
+        }
+    },
+
+    {
+        "pk": 8,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp5002601115",
+            "name": "Acrylic purple, red, black while and gold Slim Line Pen",
+            "description": "A great example of a slim line pen turned acrylic, containing multiple colours. ",
+            "price": 29.99,
+            "category": 5,              
+            "image": "PenNo329.png"
+        }
+    }]
