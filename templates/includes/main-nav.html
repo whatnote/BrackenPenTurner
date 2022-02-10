@@ -2,12 +2,11 @@
     <ul class="navbar-nav w-auto mx-auto">
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                All Pens
+                Pens
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item ">Pen Type</a>
-                <a href="{% url 'products' %}" class="dropdown-item">All Pens</a>
+                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
             </div>
         </li>
 
@@ -20,6 +19,7 @@
                 <a href="{% url 'products' %}?category=fountain_pen" class="dropdown-item">Fountain Pens</a>
                 <a href="{% url 'products' %}?category=race_car_stylus" class="dropdown-item">Race Car Stylus</a>
                 <a href="{% url 'products' %}?category=slim_line_pen" class="dropdown-item">Slim Line Pens</a>
+                <a href="{% url 'products' %}?category=,cigar_pen,fountain_pen,race_car_stylus,slim_line_pen" class="dropdown-item">All Pens</a>
             </div>
         </li>
 
@@ -27,20 +27,8 @@
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Blog
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="" class="dropdown-item">Blog Entries</a>
-            </div>
         </li>
 
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Special Offers
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">New Arrivals</a>
-                <a href="" class="dropdown-item">Clearance</a>
-                <a href="" class="dropdown-item">All Specials</a>
-            </div>
-        </li>
+        
     </ul>
 </div>

@@ -30,6 +30,11 @@
                 <div class="product-details-container mb-5 mt-md-5">
                     <p class="mb-0">{{ product.name }}</p>
                     <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                    {% for c in current_categories %}
+                        <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
+                            <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
+                        </a>
+                    {% endfor %}
                     <p class="mt-3">{{ product.description }}</p>
                 </div>
             </div>
