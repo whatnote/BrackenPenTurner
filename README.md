@@ -159,6 +159,13 @@ Font awesome was used to provide the icons, that really bring the page to life.
 mkdir products/fixtures
 ```
 
+-to add the bag
+
+```
+python3 manage.py startapp bag
+```
+
+
 
 
 
