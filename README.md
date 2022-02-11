@@ -165,7 +165,10 @@ mkdir products/fixtures
 python3 manage.py startapp bag
 ```
 
-
+- to add the checkout section
+```
+python3 manage.py startapp checkout
+```
 
 
 
