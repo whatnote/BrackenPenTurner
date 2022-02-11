@@ -169,7 +169,16 @@ python3 manage.py startapp bag
 ```
 python3 manage.py startapp checkout
 ```
-
+once the code is written, look to make the migrations.
+```
+python3 manage.py makemigrations --dry-run
+```
+```
+python3 manage.py makemigrations
+```
+```
+python3 manage.py migrate --plan
+```
 
 
 ### Repository Link
