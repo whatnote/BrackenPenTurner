@@ -180,6 +180,21 @@ python3 manage.py makemigrations
 python3 manage.py migrate --plan
 ```
 
+- crispy forms for checkout
+```
+pip3 install django-crispy-forms
+```
+
+- also a good time to updatethe requirements file
+```
+pip3 freeze > requirements.txt
+```
+
+
+
+
+
+
 
 ### Repository Link
 
