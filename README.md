@@ -190,9 +190,90 @@ pip3 install django-crispy-forms
 pip3 freeze > requirements.txt
 ```
 
+-Connecting to Stripe
 
+first create an account with [stripe](https://stripe.com/gb)
 
+remember to confirm it by clicking on the email from Stripe. 
 
+first add their JS to the core js block in the base template.
+```
+<head>
+  <title>Checkout</title>
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+```
+then add it to the checkout.html with post block
+```
+{% block postloadjs %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+{% endblock %}
+```
+
+add js to the checkout js
+```
+/*
+    Core logic/payment flow for this comes from here:
+    https://stripe.com/docs/payments/accept-a-payment
+    CSS from here: 
+    https://stripe.com/docs/stripe-js
+*/
+
+var stripe_public_key = $('#id_stripe_public_key').text().slice(1, -1);
+var client_secret = $('#id_client_secret').text().slice(1, -1);
+var stripe = Stripe(stripe_public_key);
+var elements = stripe.elements();
+var style = {
+    base: {
+        color: '#000',
+        fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+        fontSmoothing: 'antialiased',
+        fontSize: '16px',
+        '::placeholder': {
+            color: '#aab7c4'
+        }
+    },
+    invalid: {
+        color: '#dc3545',
+        iconColor: '#dc3545'
+    }
+};
+var card = elements.create('card', {style: style});
+card.mount('#card-element');
+```
+
+add css to the css file
+```
+.StripeElement--focus,
+.stripe-style-input:focus,
+.stripe-style-input:active {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+.stripe-style-input::placeholder {
+    color: #aab7c4;
+}
+
+.fieldset-label {
+    position: relative;
+    right: .5rem;
+}
+
+#payment-form .form-control,
+#card-element {
+    color: #000;
+    border: 1px solid #000;
+}
+```
+
+then add the public key to checkout views.py context
 
 
 
