@@ -275,7 +275,12 @@ add css to the css file
 
 then add the public key to checkout views.py context
 
+then install stripe via the terminal
+```
+pip3 install stripe
+```
 
+import it to view.py
 
 ### Repository Link
 
