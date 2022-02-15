@@ -282,6 +282,18 @@ pip3 install stripe
 
 import it to view.py
 
+
+
+installing countries to checkout. 
+
+```
+pip3 install django-countries
+```
+
+update 
+
+
+
 ### Repository Link
 
 To run the site in a live environment [click here](http://claims-corner.herokuapp.com/login)
