@@ -294,6 +294,150 @@ update
 
 
 
+Deployement to heroku
+
+log onto [Heroku](https://dashboard.heroku.com/)
+
+click on create new app. 
+
+name it and click on the region closest to you. 
+
+<img src="/workspace/BrackenPenTurner/ReadMePics/deployement/new app .jpg" alt="image of ">
+
+then click on resources, 
+
+in add on type 
+
+```
+postgres
+```
+
+<img src="/workspace/BrackenPenTurner/ReadMePics/deployement/resourcePostgress.jpg">
+
+chose the free plan, 
+
+<img src="/workspace/BrackenPenTurner/ReadMePics/deployement/freePlan.jpg">
+
+
+you shoould then see the following:
+
+<img src="/workspace/BrackenPenTurner/ReadMePics/deployement/postgreInstalled.jpg">
+
+once that is done go back to gitpod cli and install 
+
+```
+pip3 install dj_database_url
+
+```
+
+then install
+```
+pip3 install psycopg2-binary
+```
+
+
+then freeze requirements. 
+```
+pip3 freeze > requirements.txt
+```
+
+<img src="/workspace/BrackenPenTurner/ReadMePics/deployement/requirementsTxtView.jpg">
+
+
+once that is done, goto settings.py in the project folder. 
+
+add 
+```
+import dj_database_url
+```
+
+comment out the default database setting. line circa 119
+
+```
+# Database
+# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
+```
+
+Replace it with, 
+
+```
+DATABASES = {
+    'default': dj_database_url.parse(url)
+}
+```
+You'll need to add the database url from heroku, this is found here:
+
+<img src="/workspace/BrackenPenTurner/ReadMePics/deployement/configVars.jpg">
+
+
+Now you'll need to run migrations all over again. 
+
+```
+python3 manage.py showmigration
+```
+
+<img src="/workspace/BrackenPenTurner/ReadMePics/deployement/showMigrations.jpg">
+
+
+the run
+
+```
+python3 manage.py migrate
+```
+
+<img src="/workspace/BrackenPenTurner/ReadMePics/deployement/mirgate.jpg">
+
+then import product data. 
+
+```
+python3 manage.py loaddata categories
+```
+
+<img src="/workspace/BrackenPenTurner/ReadMePics/deployement/loadCategories.jpg">
+
+```
+python3 manage.py loaddata products
+```
+<img src="/workspace/BrackenPenTurner/ReadMePics/deployement/loadProducts.jpg">
+
+the is important, categories first then products. 
+
+Now create the super user
+```
+python3 manage
+```
+
+a side note if you didn't use fixtures. 
+
+```
+A note for creating your database if you didn't use fixtures
+When you come to follow this process for your milestone project, you may not have used a fixtures file to populate your database like the instructor did.
+
+If this is the case, manually re-creating your database when you come to deploy can take a considerable amount of time. Thankfully, there is a short process you can follow to download your local mysql database and then upload it to postgres:
+
+Make sure your manage.py file is connected to your mysql database
+Use this command to backup your current database and load it into a db.json file:
+python3 manage.py dumpdata --exclude auth.permission --exclude contenttypes > db.json
+Connect your manage.py file to your postgres database
+Then use this command to load your data from the db.json file into postgres:
+python3 manage.py loaddata db.json
+```
+
+
+
+
+aws - s3 - simple storgae service. 
+
+
+
+
 ### Repository Link
 
 To run the site in a live environment [click here](http://claims-corner.herokuapp.com/login)
