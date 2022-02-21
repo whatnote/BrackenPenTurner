@@ -302,7 +302,7 @@ click on create new app.
 
 name it and click on the region closest to you. 
 
-<img src="/workspace/BrackenPenTurner/ReadMePics/deployement/new app .jpg" alt="image of ">
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/newApp.jpg" alt="image of ">
 
 then click on resources, 
 
@@ -312,16 +312,16 @@ in add on type
 postgres
 ```
 
-<img src="/workspace/BrackenPenTurner/ReadMePics/deployement/resourcePostgress.jpg">
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/resourcePostgress.jpg">
 
 chose the free plan, 
 
-<img src="/workspace/BrackenPenTurner/ReadMePics/deployement/freePlan.jpg">
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/freePlan.jpg">
 
 
 you shoould then see the following:
 
-<img src="/workspace/BrackenPenTurner/ReadMePics/deployement/postgreInstalled.jpg">
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/postgreInstalled.jpg">
 
 once that is done go back to gitpod cli and install 
 
@@ -341,7 +341,7 @@ then freeze requirements.
 pip3 freeze > requirements.txt
 ```
 
-<img src="/workspace/BrackenPenTurner/ReadMePics/deployement/requirementsTxtView.jpg">
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/requirementsTxtView.jpg">
 
 
 once that is done, goto settings.py in the project folder. 
@@ -374,7 +374,7 @@ DATABASES = {
 ```
 You'll need to add the database url from heroku, this is found here:
 
-<img src="/workspace/BrackenPenTurner/ReadMePics/deployement/configVars.jpg">
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/configVars.jpg">
 
 
 Now you'll need to run migrations all over again. 
@@ -383,7 +383,7 @@ Now you'll need to run migrations all over again.
 python3 manage.py showmigration
 ```
 
-<img src="/workspace/BrackenPenTurner/ReadMePics/deployement/showMigrations.jpg">
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/showMigrations.jpg">
 
 
 the run
@@ -392,7 +392,7 @@ the run
 python3 manage.py migrate
 ```
 
-<img src="/workspace/BrackenPenTurner/ReadMePics/deployement/mirgate.jpg">
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/mirgate.jpg">
 
 then import product data. 
 
@@ -400,19 +400,14 @@ then import product data.
 python3 manage.py loaddata categories
 ```
 
-<img src="/workspace/BrackenPenTurner/ReadMePics/deployement/loadCategories.jpg">
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/loadCategories.jpg">
 
 ```
 python3 manage.py loaddata products
 ```
-<img src="/workspace/BrackenPenTurner/ReadMePics/deployement/loadProducts.jpg">
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/loadProducts.jpg">
 
 the is important, categories first then products. 
-
-Now create the super user
-```
-python3 manage
-```
 
 a side note if you didn't use fixtures. 
 
@@ -430,6 +425,51 @@ Then use this command to load your data from the db.json file into postgres:
 python3 manage.py loaddata db.json
 ```
 
+Now create the super user
+```
+python3 manage.py createsuperuser
+```
+
+you now need to delete the heroku database config from setting.py, circa line 133, then uncomment the original. 
+
+wrap that in the following if statement. 
+
+```
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+```
+
+now install unicorn. this will act as the webserver. 
+```
+pip3 install gunicorn
+```
+
+then freeze that into the requirement's file.
+```
+pip3 freeze> requirements.txt
+```
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/gunicorn.jpg">
+
+now create a Procfile right click on explorer, create file, note not .ext ! 
+
+```
+Procfile
+```
+
+enter the following into the file. 
+```
+web: gunicorn boutique_ado.wsgi:application
+```
 
 
 
