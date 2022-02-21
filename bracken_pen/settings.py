@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-pgtktu*4v+^$84ik@04!2qvq6l-c!migq37yk9^8lswml2iwhu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['bracken-pen-turner.herokuapp.com', 'localhost']
 
 
 # Application definition

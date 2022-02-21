@@ -471,6 +471,28 @@ enter the following into the file.
 web: gunicorn boutique_ado.wsgi:application
 ```
 
+now log onto Herokku in the CLI. 
+
+```
+heroku login -i 
+```
+
+use your eamil address and your api key from heroku. 
+
+next type
+```
+heroku config:set DISABLE_COLLECTSTATIC=1 --app bracken-pen-turner
+```
+
+add host name to settings.py 
+
+```
+ALLOWED_HOSTS = ['bracken-pen-turner.herokuapp.com', 'localhost']
+```
+
+
+
+
 
 
 aws - s3 - simple storgae service. 
