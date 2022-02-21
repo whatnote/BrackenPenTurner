@@ -468,7 +468,7 @@ Procfile
 
 enter the following into the file. 
 ```
-web: gunicorn boutique_ado.wsgi:application
+web: gunicorn bracken_pen.wsgi:application
 ```
 
 now log onto Herokku in the CLI. 
@@ -490,9 +490,15 @@ add host name to settings.py
 ALLOWED_HOSTS = ['bracken-pen-turner.herokuapp.com', 'localhost']
 ```
 
+then do a git add, commit and push. 
 
+you'll then need to 
 
+git push heroku main
 
+```
+heroku git:remote -a bracken-pen-turner
+```
 
 
 aws - s3 - simple storgae service. 
