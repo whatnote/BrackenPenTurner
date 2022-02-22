@@ -492,14 +492,38 @@ ALLOWED_HOSTS = ['bracken-pen-turner.herokuapp.com', 'localhost']
 
 then do a git add, commit and push. 
 
-you'll then need to 
+you'll then need to push to heroku, you might need to log into Heruko in the CLI, type
 
+
+```
 git push heroku main
-
-```
-heroku git:remote -a bracken-pen-turner
 ```
 
+click on the link and you should be taken to your partially deployed site. 
+
+Next you'll need to link Heruko to you gitHub, 
+
+click setting, then click on deployment method gitHub, search for the rep. click connect. then click deploy. 
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/linkToGitHUB.jpg">
+
+
+Now update the secret_key. 
+
+use a website to generate a django secret key
+
+[django-secret-key-generator](https://miniwebtool.com/django-secret-key-generator/)
+
+in settings.py
+
+swtich out the old "secret key"
+
+SECRET_KEY = 'django-insecure-pgtktu*4v+^$84ik@04!2qvq6l-c!migq37yk9^8lswml2iwhu'
+
+with this 
+```
+SECRET_KEY = '
+```
 
 aws - s3 - simple storgae service. 
 
