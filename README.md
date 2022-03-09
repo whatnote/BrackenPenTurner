@@ -522,12 +522,266 @@ SECRET_KEY = 'django-insecure-pgtktu*4v+^$84ik@04!2qvq6l-c!migq37yk9^8lswml2iwhu
 
 with this 
 ```
-SECRET_KEY = '
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 ```
 
-aws - s3 - simple storgae service. 
+AWS - s3 - simple storgae service. 
+
+log on to AWS (you may need to create and account, you'll need a credit card too, but things should stay below the free tarif.)
+
+[Amazon Web Services](https://aws.amazon.com/)
+
+once signed up, log in and goto the AWS Management Console. 
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/AWSControl.jpg">
+
+then search for S3. and click on create a bucket. 
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/createABucket.jpg">
+
+enter a name, "bracken-pen-turner"
+
+select a region closest to you. 
 
 
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/bucketNameRegion.jpg">
+
+
+un click "Block all public access" and acknowledge access will be public.
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/accessPublic.jpg">
+
+
+then click "create bucket"
+
+The click on the newly created bucket. 
+
+open properties. 
+
+
+then enable static website hosting
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/StaticWebHosting.jpg">
+
+Next click on Permissions. 
+
+Scroll to CORS, enter the following
+
+```
+[
+  {
+      "AllowedHeaders": [
+          "Authorization"
+      ],
+      "AllowedMethods": [
+          "GET"
+      ],
+      "AllowedOrigins": [
+          "*"
+      ],
+      "ExposeHeaders": []
+  }
+]
+```
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/CORSPolicy.jpg">
+
+Still under permissions click on bucket policy, 
+
+Click on policy generator
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/PolicyGenerator.jpg">
+
+
+set type of policy to "S3 Bucket Policy"
+
+Alow all principles by entering a *
+
+the action "getObjet"
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/Policy1.jpg">
+
+
+the copy the ARN from the edit policy page, 
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/Policy2.jpg">
+
+to here
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/Policy3.jpg">
+
+Then click "Add Statement"
+
+Then click "Generate Policy"
+
+Copy the generated policy. 
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/Policy4.jpg">
+
+in the edit bucket policy. 
+
+And add a /* to the end of the reseorce line 11. 
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/Policy5.jpg">
+
+then click save changes
+
+Now, agian under permission, go to the Access control List. 
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/accessPublic2.jpg">
+
+
+make sure ACLs enabled is clicked. 
+
+Select Bucket owner preferred. 
+
+
+
+
+
+- Createing the IAM
+
+go to services and search for IAM, click on this. 
+
+Next click 
+
+User Group
+
+Create User Group
+
+Name it something useful. 
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/IAMUserGroup.jpg">
+
+now click on the user group, then click on polices, 
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/policyIAMBucket.jpg">
+
+
+then click create poicy, 
+
+pick the JSON tab
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/JSONTab.jpg">
+
+then click import manage policy, 
+
+search for S3, click on the AmanzonS3FullAccess
+
+then click import
+
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/Import1.jpg">
+
+Now we don't want full access to everthing, just our new bucket, so we need to get the buck ARN from the S3. 
+
+copy and paste this in to the JSON, thus:
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/policyARN.jpg">
+
+click Next:Tags tags are optional but do click to get to review policy. 
+
+On the review policy page give it a name and a description then click create policy. 
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/createPolicy.jpg">
+
+this takes as back to the policy page.
+
+We now need to attach it to the group we created. 
+
+go back to user groups, click on permissions, click on add permissions. The policy you just created should be at the top, if not search for the name you gave it. then click "Add permissions"
+
+We now need to craete a User, click on User. then Add user. 
+
+give them a user name, and programatic access. 
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/addUse1.jpg">
+
+click next. 
+
+We can now put them in our group. Just click the group. (note the policy is attached to the group)
+
+you can click through to the next 2 screens, then click "Create user".
+
+Now download the .CSV file. 
+This contains the access key and secret access key. 
+
+-Connecting Django to the S3 Bucket
+
+first install two new packages in the commange line 
+
+```
+pip3 install boto3
+```
+
+and 
+```
+pip3 install django-storages
+```
+
+then freeze them into the text file. 
+
+```
+pip3 freeze > requirements.txt
+```
+
+you'll need to add storages to our installed app
+
+in setting.py add 
+
+```
+'storages',
+```
+
+next add the following to the settings.py crica line 178. 
+
+```
+if 'USE_AWS' in os.environ:
+    # Bucket Config
+    AWS_STORAGE_BUCKET_NAME = 'ckz8780-boutique-ado'
+    AWS_S3_REGION_NAME = 'us-east-1'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+    # Static and media files
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+
+    # Override static and media URLs in production
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+```
+
+we now need to tell Django to link up to s3 bucket
+
+createa a file 
+```
+custon_storages.py
+```
+
+enther the following code. 
+
+```
+from django.conf import settings
+from storages.backends.s3boto3 import S3Boto3Storage
+
+
+class StaticStorage(S3Boto3Storage):
+    location = settings.STATICFILES_LOCATION
+
+
+class MediaStorage(S3Boto3Storage):
+    location = settings.MEDIAFILES_LOCATION
+```
+
+
+
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/addUse1.jpg">
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/addUse1.jpg">
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/addUse1.jpg">
 
 
 ### Repository Link
