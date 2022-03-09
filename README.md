@@ -756,7 +756,7 @@ we now need to tell Django to link up to s3 bucket
 
 createa a file 
 ```
-custon_storages.py
+custom_storages.py
 ```
 
 enther the following code. 
