@@ -3,6 +3,10 @@
 ## Milestone Project 4
 
 
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/BrackenPenTurner.png" alt="image of deployed website home page on devices">
+
+
+/workspace/BrackenPenTurner/ReadMePics/BrackenPenTurner.png
 
 - [**About**](#About)
 - [**UX**](#UX)
@@ -12,8 +16,7 @@
   - [Wireframes](#Wireframes)
 - [**Features**](#Features)
   - [Functionality](#Functionality)
-  - [Existing Features](#Existing-Features)
-    - [Game Controls](#Game-Controls)
+  - [Existing Features](#Existing-Features)    
   - [Features Left To Implement](#Features-Left-To-Implement)
 - [**Technologies Used**](#Technologies-Used)
   - [Version Control](#Version-Control)
@@ -26,8 +29,7 @@
 - [**Deployment**](#Deployment)
   - [Running Code Locally](#Running-Code-Locally)
 - [**Credits**](#Credits)
-  - [Content](#Content)
-    
+  - [Content](#Content)    
   - [Acknowledgements](#Acknowledgements)
   - [Disclaimer](#Disclaimer)
 
@@ -63,6 +65,8 @@ Bracken Pen Turner,
 - Purchasing and checkout
     - 
 
+## Research
+
 
 ## Styling
 
@@ -72,7 +76,113 @@ The chosen font was the one Roy used to design his logo, which was Calibra Light
 
 Font awesome was used to provide the icons, that really bring the page to life. 
 
-[Font Awesome](https://fontawesome.com/kits/e5ebf0ee99/use                                                                                                                                                                                                                                                                                      )
+[Font Awesome](https://fontawesome.com/kits/e5ebf0ee99use)
+
+## WireFrames
+
+## Features
+### Functionality
+### Existing-Features
+### Features-Left-To-Implement
+
+
+
+## Testing
+
+  ### User Story Testing
+
+  ### Responsive Testing
+
+  ### Additional Testing
+
+  ### HTML And CSS Validation
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/testing/InitialHTMLErrors.jpg" alt="Image showin initial html errors">
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/testing/NoCSSErrors.jpg" alt="Image showing no CSS Errors">
+
+  ### Interesting Bugs Or Problems
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/testing/interestingBug.jpg" alt="image intresting bug solution">
+
+## Technologies-Used
+
+[**Trello**](https://trello.com/)
+
+- Used to time manage the various steps in the project.
+
+[**Balsamiq**](https://balsamiq.com/)
+
+- Balsamiq was used to create wireframes of both the mobile and website before construction began.
+
+[**Gitpod**](https://gitpod.io/)
+
+- I used Gitpod to write my code.
+
+[**Git**](https://git-scm.com/)
+
+- I've used Git version control system to regularly add and commit changes made to project in gitpod thn pushing them to GitHub.
+
+[**Google Fonts**](https://fonts.google.com/)
+
+- I used google fonts to style the text.
+
+[**Bootstrap**](https://getbootstrap.com/docs/4.4/getting-started/introduction/#starter-template)
+- I used bootstrap to style my webpage. 
+
+[**HTML**](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+
+- HTML is used.
+
+[**CSS**](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3)
+
+- The project uses CSS to apply style to my site. The style.css is link to the base.html.
+
+[**JavaScript**](https://www.javascript.com/)
+
+- script.js is linked to the base.html file and also written directly into the html file when specific to only that page.
+
+[**jQuery**](https://releases.jquery.com/jquery/)
+
+- I used jQuery for DOM manipulation in my project.
+
+[**Python3**](https://www.python.org/)
+- was used to program the join the frontend to the backend. 
+
+[**Flask**](https://flask.palletsprojects.com/en/2.0.x/)
+
+- was used as the micro framework for python3
+
+[**Werkzeug**](https://www.palletsprojects.com/p/werkzeug/)
+
+- Flask wraps Werkzeug, using it to handle the details of WSGI while providing more structure and patterns for defining powerful applications.
+
+[**Jinja**](https://jinja.palletsprojects.com/en/2.11.x/)
+
+- Jinja2 is a full-featured template engine for Python.
+
+[**Heruko**](https://id.heroku.com/login)
+
+- Heruko was used to host and delpoy the site 
+
+[**MongoDB**](https://www.mongodb.com/)
+- MongoDB was used as the backend database
+
+[**Radom Key Generator**](https://randomkeygen.com/)
+- Ramdom key was used to generate the necessary key to protect the database. 
+
+## Version Control
+
+[**Git**](https://git-scm.com/)
+
+- Git was used to regularly commit changes made to my project.
+
+[**GitHub**](https://github.com/)
+
+- Is used as my Repository.
+
+
+
 
 ### Deployment.
 
@@ -776,9 +886,9 @@ class MediaStorage(S3Boto3Storage):
 
 when you push this to git, it should result in heruko building the app and the website delpoying. with all the static files. 
 
-To join the media files to the S3 bucket. 
 
-first things, add this code to setting.py to cache static files for long periods. 
+
+optional, add this code to setting.py to cache static files for long periods. it should help to improve the performance of the site.
 
 ```
 if 'USE_AWS' in os.environ:
@@ -788,6 +898,23 @@ if 'USE_AWS' in os.environ:
         'CacheControl': 'max-age=94608000',
     }
 ```
+
+
+To join the media files to the S3 bucket. 
+
+go to S3, 
+
+click on your bucket
+
+then click add folder
+
+name the folder media
+
+upload photos to that media, select the photos you want to add.
+
+make sure "grant public permission to access this object" is selected. 
+
+The click upload.
 
 
 
@@ -828,85 +955,6 @@ In these particulary cases the code was amended to suite to the requirement of t
 
 the email connenction was lifted from the codeinstitute course. 
 #### Putting it all toghter - Sending email using emailJS [link to course here](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+IFD101+2017_T3/courseware/03d3f6524ad249d9b33e3336d156dfd0/e4710f80cdf34bffbd607bc102482d5c/)
-
-
-
-## Technologies-Used
-
-[**Trello**](https://trello.com/)
-
-- Used to time manage the various steps in the project.
-
-[**Balsamiq**](https://balsamiq.com/)
-
-- Balsamiq was used to create wireframes of both the mobile and website before construction began.
-
-[**Gitpod**](https://gitpod.io/)
-
-- I used Gitpod to write my code.
-
-[**Git**](https://git-scm.com/)
-
-- I've used Git version control system to regularly add and commit changes made to project in gitpod thn pushing them to GitHub.
-
-[**Google Fonts**](https://fonts.google.com/)
-
-- I used google fonts to style the text.
-
-[**Bootstrap**](https://getbootstrap.com/docs/4.4/getting-started/introduction/#starter-template)
-- I used bootstrap to style my webpage. 
-
-[**HTML**](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
-
-- HTML is used.
-
-[**CSS**](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3)
-
-- The project uses CSS to apply style to my site. The style.css is link to the base.html.
-
-[**JavaScript**](https://www.javascript.com/)
-
-- script.js is linked to the base.html file and also written directly into the html file when specific to only that page.
-
-[**jQuery**](https://releases.jquery.com/jquery/)
-
-- I used jQuery for DOM manipulation in my project.
-
-[**Python3**](https://www.python.org/)
-- was used to program the join the frontend to the backend. 
-
-[**Flask**](https://flask.palletsprojects.com/en/2.0.x/)
-
-- was used as the micro framework for python3
-
-[**Werkzeug**](https://www.palletsprojects.com/p/werkzeug/)
-
-- Flask wraps Werkzeug, using it to handle the details of WSGI while providing more structure and patterns for defining powerful applications.
-
-[**Jinja**](https://jinja.palletsprojects.com/en/2.11.x/)
-
-- Jinja2 is a full-featured template engine for Python.
-
-[**Heruko**](https://id.heroku.com/login)
-
-- Heruko was used to host and delpoy the site 
-
-[**MongoDB**](https://www.mongodb.com/)
-- MongoDB was used as the backend database
-
-[**Radom Key Generator**](https://randomkeygen.com/)
-- Ramdom key was used to generate the necessary key to protect the database. 
-
-## Version Control
-
-[**Git**](https://git-scm.com/)
-
-- Git was used to regularly commit changes made to my project.
-
-[**GitHub**](https://github.com/)
-
-- Is used as my Repository.
-
 
 
 ## Acknowledgements
