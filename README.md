@@ -2,11 +2,7 @@
 
 ## Milestone Project 4
 
-
 <img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/BrackenPenTurner.png" alt="image of deployed website home page on devices">
-
-
-/workspace/BrackenPenTurner/ReadMePics/BrackenPenTurner.png
 
 - [**About**](#About)
 - [**UX**](#UX)
@@ -33,12 +29,13 @@
   - [Acknowledgements](#Acknowledgements)
   - [Disclaimer](#Disclaimer)
 
-
 ## About
 
-Bracken Pen Turner, 
+Bracken Pen Turner, is Roy Simpson, he hand tuns each pen personally, his wife sells them at local craft fairs and markets, the site is to make it asir for repeat business and recomedations and a note of the site will be handed out with each sale. 
 
 ## UX
+
+The beauty of each pen is magnificient, so the site is degined to focus on this fact very quickly. 
 
 ### User Stories
 
@@ -48,22 +45,29 @@ Bracken Pen Turner,
     - See individual item details
     - see all items for sale
     - able to view the total of your current purchases.
+    - able to puchase refils
+    - able to purchase select accessories . 
 
 - Site Browser
     - Rigester for an account
     - able to log in and log out
-    - recvoery of forgotten password
+    - recovery of forgotten password
     - personalised profile
 
 - sorting and searching
-    - Sort the list of available products
-    - sort a specific
-    - sort multiple categories of products simltaneously
+    - Sort the list of available pen
+    - sort a specific type of pen    
     - Search for a product be name or description
-    - Easily see what was search for and number of results. 
+    
 
 - Purchasing and checkout
-    - 
+    - able to puchase as a one off user. 
+    - able to puchase when logged in.
+
+- Site Admin  
+    - able to add new pens to the site
+    - able to delete out of stock pens
+    - able to amend pen details on site 
 
 ## Research
 
@@ -79,6 +83,14 @@ Font awesome was used to provide the icons, that really bring the page to life.
 [Font Awesome](https://fontawesome.com/kits/e5ebf0ee99use)
 
 ## WireFrames
+
+### Mobile Wire Frame
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/WireFrames/wireframeRoysPensmobile.png" alt="image of mobile wire frame">
+
+### Desktop Wire Frames 
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/WireFrames/wireframeRoysPensDesktop.png" alt="image of desktop wireframe">
 
 ## Features
 ### Functionality
@@ -404,7 +416,7 @@ update
 
 
 
-Deployement to heroku
+## Deployement to heroku
 
 log onto [Heroku](https://dashboard.heroku.com/)
 
@@ -635,7 +647,7 @@ with this
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 ```
 
-AWS - s3 - simple storgae service. 
+## AWS - s3 - simple storgae service. 
 
 log on to AWS (you may need to create and account, you'll need a credit card too, but things should stay below the free tarif.)
 
@@ -743,11 +755,7 @@ make sure ACLs enabled is clicked.
 
 Select Bucket owner preferred. 
 
-
-
-
-
-- Createing the IAM
+#### Createing the IAM
 
 go to services and search for IAM, click on this. 
 
@@ -862,7 +870,7 @@ if 'USE_AWS' in os.environ:
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 ```
 
-we now need to tell Django to link up to s3 bucket
+### Linking Django to s3 bucket
 
 createa a file 
 ```
@@ -900,7 +908,7 @@ if 'USE_AWS' in os.environ:
 ```
 
 
-To join the media files to the S3 bucket. 
+### To join the media files to the S3 bucket. 
 
 go to S3, 
 
@@ -918,17 +926,66 @@ The click upload.
 
 
 
+### Adding Stripe to Heroku
 
-<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/addUse1.jpg">
+in stripe log and and go to developers then the API Keys. 
 
-<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/addUse1.jpg">
+Copy of the Publishable KEY and and Secret Key, 
 
-<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/addUse1.jpg">
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/StripeKeyApi.jpg">
+
+
+#### Webhook Endpoint. 
+
+Still in Stripe we need to add a new webhook endpoint. 
+just under API, click Webhooks, click add endpoint. 
+
+copy the heroku URL add, /checkout/wh/
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/weebhookEndPoint.jpg">
+
+add all listening events. 
+
+click add endpoint. 
+
+now add the webhook signing secret to Heroku, in the congig Vars. (see above for this)
+
+Note, the Config Vars names need to match that in the settings.py. 
+
+
+### Emails
+
+This is most easily acheived with a gmail account. 
+
+log on to your gmail account/ set one up; go to settings. 
+
+click on Accounts and Imports, then other google account settings. 
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/Gmail1.jpg">
+
+then click on Security. 
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/Gmail2.jpg">
+
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/Gmail3.jpg">
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ### Repository Link
 
-To run the site in a live environment [click here](http://claims-corner.herokuapp.com/login)
+To run the site in a live environment [click here](https://bracken-pen-turner.herokuapp.com/)
 
 The link to my repository can be found via this link:
 [Link to Repository](https://github.com/whatnote/BrackenPenTurner)
@@ -951,10 +1008,9 @@ the claims list was mapped accross from the task list. as was the
 - edit and delete feature
 - search 
 
-In these particulary cases the code was amended to suite to the requirement of the user stories. 
+The Blog was added useing the the instructions from [Django Central](https://djangocentral.com/building-a-blog-application-with-django/)
 
-the email connenction was lifted from the codeinstitute course. 
-#### Putting it all toghter - Sending email using emailJS [link to course here](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+IFD101+2017_T3/courseware/03d3f6524ad249d9b33e3336d156dfd0/e4710f80cdf34bffbd607bc102482d5c/)
+
 
 
 ## Acknowledgements
