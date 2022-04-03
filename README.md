@@ -45,24 +45,23 @@ The beauty of each pen is magnificient, so the site is degined to focus on this 
     - See individual item details
     - see all items for sale
     - able to view the total of your current purchases.
-    - able to puchase refils
-    - able to purchase select accessories . 
+    - able to puchase pen refils
+    - able to purchase select accessories 
+    - able to purchase without having an account
 
 - Site Browser
-    - Rigester for an account
+    - able Rigester for an account
     - able to log in and log out
     - recovery of forgotten password
-    - personalised profile
-
+    
 - sorting and searching
-    - Sort the list of available pen
+    - Sort the list of available pens by price
     - sort a specific type of pen    
     - Search for a product be name or description
-    
 
 - Purchasing and checkout
-    - able to puchase as a one off user. 
-    - able to puchase when logged in.
+    - able to puchase as a one off user
+    - able to puchase when logged in
 
 - Site Admin  
     - able to add new pens to the site
@@ -78,6 +77,8 @@ The chosen font was the one Roy used to design his logo, which was Calibra Light
 
 [Google fonts](https://fonts.google.com/specimen/Lato?query=lato&selection.family=Lato&sidebar.open=)
 
+The pen's photographs were provided by Roy, unfortunatley, they aren't the best, this is due to the pens refletive nature, I was able to improve unpon the pictures by filtering out the background, I tried several colours of background but black really made the pens pop! 
+
 Font awesome was used to provide the icons, that really bring the page to life. 
 
 [Font Awesome](https://fontawesome.com/kits/e5ebf0ee99use)
@@ -86,13 +87,15 @@ Font awesome was used to provide the icons, that really bring the page to life.
 
 ### Mobile Wire Frame
 
-<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/WireFrames/wireframeRoysPensmobile.png" alt="image of mobile wire frame">
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/WireFrames/wireframeRoysPensMobile.png" alt="image of mobile wire frame">
 
 ### Desktop Wire Frames 
 
 <img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/WireFrames/wireframeRoysPensDesktop.png" alt="image of desktop wireframe">
 
 ## Features
+
+
 ### Functionality
 ### Existing-Features
 ### Features-Left-To-Implement
@@ -959,6 +962,8 @@ This is most easily acheived with a gmail account.
 
 log on to your gmail account/ set one up; go to settings. 
 
+First we need to set-up and app password. 
+
 click on Accounts and Imports, then other google account settings. 
 
 <img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/Gmail1.jpg">
@@ -970,12 +975,48 @@ then click on Security.
 <img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/deployement/Gmail3.jpg">
 
 
+now you have the app password, copy it and enter it into Heroku's variable. 
+
+variable is:
+```
+EMAIL_HOST_PASS
+```
+
+then paste the code. 
+
+also enter, 
+
+```
+EMAIL_HOST_USER
+```
+
+then enter the email address. 
+
+Now you need to haed over to setting.py and amend some info there. 
+
+line 107 , delete 
+
+```
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+```
 
 
+then at the bottom, add
+```
 
+if 'DEVELOPMENT' in os.environ:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    DEFAULT_FROM_EMAIL = 'brackenpenturners@gmail.com'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
+    DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
 
-
-
+```
 
 
 
