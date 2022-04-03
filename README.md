@@ -990,7 +990,7 @@ also enter,
 EMAIL_HOST_USER
 ```
 
-then enter the email address. 
+then enter the email address. s
 
 Now you need to haed over to setting.py and amend some info there. 
 
@@ -1003,7 +1003,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 then at the bottom, add
 ```
-
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = 'brackenpenturners@gmail.com'
@@ -1015,10 +1014,9 @@ else:
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
-
 ```
 
-
+commit via git and push, heroku wiull then delpoy the update. 
 
 
 
