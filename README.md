@@ -31,7 +31,7 @@
 
 ## About
 
-Bracken Pen Turner, is Roy Simpson, he hand tuns each pen personally, his wife sells them at local craft fairs and markets, the site is to make it asir for repeat business and recomedations and a note of the site will be handed out with each sale. 
+Bracken Pen Turner, is Roy Simpson, he hand tuns each pen personally, his wife sells them at local craft fairs and markets, the site is to make it easier for repeat business and recomedations A note of the site will be handed out to the customer with each sale of the pen. 
 
 ## UX
 
@@ -67,6 +67,9 @@ The beauty of each pen is magnificient, so the site is degined to focus on this 
     - able to add new pens to the site
     - able to delete out of stock pens
     - able to amend pen details on site 
+
+- A Blog  
+    - able to see details of the latest news and event attended by Bracken Pen Turners.
 
 ## Research
 
@@ -1016,11 +1019,7 @@ else:
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
 ```
 
-commit via git and push, heroku wiull then delpoy the update. 
-
-
-
-
+commit via git and push, heroku will then auto-delpoy the update. 
 
 ### Repository Link
 
@@ -1031,26 +1030,11 @@ The link to my repository can be found via this link:
 
 ### Content
 
-- I followed the course "Boutique Ado" and code for project was lifted from the putting it all together from the [Backend Developenment course from the CODE Institute](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FSF_102+Q1_2020/courseware/4201818c00aa4ba3a0dae243725f6e32/d3188bf68530497aa5fba55d07a9d7d7/), 
+- I followed the course "Boutique Ado". Code for project was lifted from the Putting it all together from the [Backend Developenment course from the CODE Institute](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FSF_102+Q1_2020/courseware/4201818c00aa4ba3a0dae243725f6e32/d3188bf68530497aa5fba55d07a9d7d7/), 
   
-  
-  Particularly the:
+The blog element was added useing the the instructions from [Django Central](https://djangocentral.com/building-a-blog-application-with-django/)
 
-  -  register 
-  -  logon 
-  -  log off 
-
-  we're lifted directly from the course with just minor amendments to the CSS and html. 
-
-the claims list was mapped accross from the task list. as was the 
-- new claim 
-- edit and delete feature
-- search 
-
-The Blog was added useing the the instructions from [Django Central](https://djangocentral.com/building-a-blog-application-with-django/)
-
-
-
+THe 404 page error was taek from, [Studygyaan 404 template page](https://studygyaan.com/django/django-custom-404-error-template-page)
 
 ## Acknowledgements
 
