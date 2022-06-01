@@ -1021,7 +1021,7 @@ else:
 
 commit via git and push, heroku will then auto-delpoy the update. 
 
-### Repository Link
+g### Repository Link
 
 To run the site in a live environment [click here](https://bracken-pen-turner.herokuapp.com/)
 
