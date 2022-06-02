@@ -7,11 +7,10 @@ class PostAdmin(admin.ModelAdmin):
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title',)}
 
+
 admin.site.register(Post, PostAdmin)
 
 
-from django.contrib import admin
-from .models import Post, Comment
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     list_display = ('name', 'body', 'post', 'created_on', 'active')
