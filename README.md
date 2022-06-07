@@ -46,7 +46,7 @@ The beauty of each pen is magnificient, so the site is degined to focus on this 
     - see all items for sale
     - able to view the total of your current purchases.
     - able to puchase pen refils
-    - able to purchase select accessories 
+    - able to purchase note p                            -ads
     - able to purchase without having an account
 
 - Site Browser
@@ -70,11 +70,12 @@ The beauty of each pen is magnificient, so the site is degined to focus on this 
 
 - A Blog  
     - able to see details of the latest news and event attended by Bracken Pen Turners.
+    - able can add comments 
 
 ## Research
 
 
-## Styling
+### Styling
 
 The chosen font was the one Roy used to design his logo, which was Calibra Light, when I looked to google fonts, I found Open Sans to be most like it, so I elected that as the backup with calibra as the primary font. 
 
@@ -98,16 +99,53 @@ Font awesome was used to provide the icons, that really bring the page to life.
 
 ## Features
 
+## Functionality
 
-### Functionality
 ### Existing-Features
+
+- Shopper Experience 
+    - Able to view items for sale
+    - Able to search items for sale
+    - Can click on a item and view said item details. 
+    - Can  view all items for sale
+    - Can view the total of your current purchases.
+    - Can purchase without having an account
+    - Can sign up and have an account
+
+- Site Browser
+    - able Rigester for an account
+    - able to log in and log out
+    - recovery of forgotten password
+    
+- sorting and searching
+    - Sort the list of available pens by price
+    - sort a specific type of pen    
+    - Search for a product be name or description
+
+- Purchasing and checkout
+    - able to puchase as a one off user
+    - able to puchase when logged in
+
+- Site Admin  
+    - able to add new pens to the site
+    - able to delete out of stock pens
+    - able to amend pen details on site 
+
+- A Blog  
+    - able to see details of the latest news and event attended by Bracken Pen Turners.
+    - Users can add comments 
+
+
 ### Features-Left-To-Implement
 
+- A webpage selling replacment ink refills.
+- A Webpage selling writing pads. 
 
 
 ## Testing
 
   ### User Story Testing
+
 
 
 
@@ -120,6 +158,22 @@ Font awesome was used to provide the icons, that really bring the page to life.
 <img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/testing/InitialHTMLErrors.jpg" alt="Image showin initial html errors">
 
 <img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/testing/NoCSSErrors.jpg" alt="Image showing no CSS Errors">
+
+  ### JavaScript Testing
+
+  the JS was passed through [JSHint](https://jshint.com/). 
+
+  Several semicolons were found to be missing, these were added to fix the issues. 
+
+  The only error was, 	'template literal syntax' is only available in ES6 (use 'esversion: 6') this will be fixe at a latter date. 
+
+
+  ### Python Testing
+
+  Python Testing was carried out by the site [PEP8](http://pep8online.com/) several minor errors were found, white space and too many or not enough lines between code sections, these were all corected. 
+
+  The only other issue found, was, line too long (80 > 79 characters). As this wasthe length proscribed in the video tutorials, they have been left as stated by the tutor. 
+  
 
   ### Interesting Bugs Or Problems
 
