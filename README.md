@@ -35,7 +35,7 @@ Bracken Pen Turner, is Roy Simpson, he hand tuns each pen personally, his wife s
 
 ## UX
 
-The beauty of each pen is magnificient, so the site is degined to focus on this fact very quickly. 
+Each pen is beautiful, the site is designed to focus on this fact very quickly with pictures of the pens showing as soon as the user enters the site. 
 
 ### User Stories
 
@@ -46,7 +46,7 @@ The beauty of each pen is magnificient, so the site is degined to focus on this 
     - see all items for sale
     - able to view the total of your current purchases.
     - able to puchase pen refils
-    - able to purchase note p                            -ads
+    - able to purchase note pads
     - able to purchase without having an account
 
 - Site Browser
@@ -103,7 +103,7 @@ Font awesome was used to provide the icons, that really bring the page to life.
 
 ### Existing-Features
 
-- Shopper Experience 
+- Shopper Experience:
     - Able to view items for sale
     - Able to search items for sale
     - Can click on a item and view said item details. 
@@ -112,7 +112,7 @@ Font awesome was used to provide the icons, that really bring the page to life.
     - Can purchase without having an account
     - Can sign up and have an account
 
-- Site Browser
+- Site Browser:
     - able Rigester for an account
     - able to log in and log out
     - recovery of forgotten password
@@ -144,46 +144,97 @@ Font awesome was used to provide the icons, that really bring the page to life.
 
 ## Testing
 
-  ### User Story Testing
-
-
-
-
-  ### Responsive Testing
-
-  ### Additional Testing
-
-  ### HTML And CSS Validation
+ ### HTML And CSS Validation
 
 <img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/testing/InitialHTMLErrors.jpg" alt="Image showin initial html errors">
 
 <img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/testing/NoCSSErrors.jpg" alt="Image showing no CSS Errors">
 
-  ### JavaScript Testing
+### JavaScript Testing
 
-  the JS was passed through [JSHint](https://jshint.com/). 
+The JS was passed through [JSHint](https://jshint.com/). 
 
-  Several semicolons were found to be missing, these were added to fix the issues. 
+Several semicolons were found to be missing, these were added to fix the issues. 
 
-  The only error was, 	'template literal syntax' is only available in ES6 (use 'esversion: 6') this will be fixe at a latter date. 
+The only error was, 	'template literal syntax' is only available in ES6 (use 'esversion: 6') this will be fixe at a latter date. 
 
 
-  ### Python Testing
+### Python Testing
 
-  Python Testing was carried out by the site [PEP8](http://pep8online.com/) several minor errors were found, white space and too many or not enough lines between code sections, these were all corected. 
+Python Testing was carried out by the site [PEP8](http://pep8online.com/) several minor errors were found, white space and too many or not enough lines between code sections, these were all corected. 
 
-  The only other issue found, was, line too long (80 > 79 characters). As this wasthe length proscribed in the video tutorials, they have been left as stated by the tutor. 
+The only other issue found, was, line too long (80 > 79 characters). As this wasthe length proscribed in the video tutorials, they have been left as stated by the tutor. 
   
 
-  ### Interesting Bugs Or Problems
+### Interesting Bugs Or Problems
+
+My mine bug issue is spelling, 80% ofthe issue I resolved were simply down to being mispelt. 
+
+A note worthy issue for me was deploying with heroku, I was getting an error region name not matching supported format. Usefully this was a new issue and I was able to find the threads on slack which provided the fix. 
 
 <img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/testing/interestingBug.jpg" alt="image intresting bug solution">
+
+
+### Browser Testing 
+
+The site was test on several devices of varying size, and also on different browsers. All links were tested, setting up a user, making a purchase as a user and as not a user. 
+
+
+<img src="https://github.com/whatnote/BrackenPenTurner/blob/main/ReadMePics/testing/browserTesting.jpg" alt="image browser Testing">
+
+
+### Defensive programming
+- Some pages can be accessed only by authorized users. This is to prevent users accessing sensitive information.
+
+- Product Management Page is only accessible by the SuperUser.
+
+- My Profile page is only available for the registered users.
+
+- Edit and Delete button on the products are available only to the SuperUser.
+
+- Blog Comments Can be posted by anyone but will only be displayed if administration / site owner approves them.
+
+
+### Functionality of website
+
+### Responsiveness
+
+Bootstrap library is in charge of the grid and responsiveness. By using their grid I was able to scale website from the smallest of screens to the large desktops. Mobile dropdown navigation works great and quick.
+
+### Links
+
+
+All the links on the website have been manually tested and all of them are leading to the intended destinations. Social links currently lead to home pages of the social networks as the business social pages are not created. Tested both on mobile device and on PC.
+
+### Buttons
+
+All the buttons have been tested manually. All buttons work and their actions work as intended. Tested both on mobile device and on PC.
+
+### Forms
+
+All the form are working as intended, and they interact well with the database.
+
+### Database
+
+Database performs well, all the necessary data is stored and accessed as needed.
+
+### Deployment
+
+Website has auto deployment from GitHub enabled. That means every time I push the content from my local repository to the remote repository new website build gets created. At the time of writing this the website was on version 115.
+AWS Amazon Web Services
+
+All the static and media files are being hosted on AWS using their S3 free tier service.
+Sorting
+
+Sorting of all the products was manually tested and all the sorting works as intended
+
+
 
 ## Technologies-Used
 
 [**Trello**](https://trello.com/)
 
-- Used to time manage the various steps in the project.
+Used to time manage the various steps in the project.
 
 [**Balsamiq**](https://balsamiq.com/)
 
